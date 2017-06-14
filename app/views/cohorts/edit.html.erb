@@ -1,0 +1,6 @@
+<h3>Edit a Cohort</h3>
+<%= form_for @cohort do |f| %>
+  <%= f.label :graduation_year, 'Class of ' %>
+  <%= f.text_field :graduation_year %>
+  <%= f.submit %>
+<% end %>
