@@ -60,3 +60,6 @@ gem 'devise'
 
 # Figaro stores Environmental Variables in a YAML file and deploys automatically to some services.
 gem 'figaro'
+
+# Twilio sends SMS messages
+gem 'twilio-ruby'
