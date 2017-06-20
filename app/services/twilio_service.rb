@@ -1,3 +1,4 @@
+# See config/initializers/twilio.rb for configuration
 class TwilioService
   def initialize
     @client = Twilio::REST::Client.new
