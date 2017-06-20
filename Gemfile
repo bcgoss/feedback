@@ -41,6 +41,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'capybara'
+  gem 'vcr'
+  gem 'faraday'
 end
 
 group :development do
@@ -57,3 +59,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Devise for authentication https://github.com/plataformatec/devise
 gem 'devise' 
+
+# Figaro stores Environmental Variables in a YAML file and deploys automatically to some services.
+gem 'figaro'
+
+# Twilio sends SMS messages
+gem 'twilio-ruby'
