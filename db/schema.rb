@@ -21,31 +21,6 @@ ActiveRecord::Schema.define(version: 20170618142829) do
     t.datetime "updated_at",      null: false
   end
 
-  create_table "enrollments", force: :cascade do |t|
-    t.integer  "person_id_id"
-    t.integer  "groups_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["groups_id"], name: "index_enrollments_on_groups_id", using: :btree
-    t.index ["person_id_id"], name: "index_enrollments_on_person_id_id", using: :btree
-  end
-
-  create_table "groups", force: :cascade do |t|
-    t.integer  "person_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "name"
-    t.index ["person_id"], name: "index_groups_on_person_id", using: :btree
-  end
-
-  create_table "people", force: :cascade do |t|
-    t.string   "name"
-    t.string   "phone_number"
-    t.string   "student_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
   create_table "students", force: :cascade do |t|
     t.string   "name"
     t.string   "phone_number"
@@ -70,6 +45,4 @@ ActiveRecord::Schema.define(version: 20170618142829) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "enrollments", "groups", column: "groups_id"
-  add_foreign_key "groups", "people"
 end
