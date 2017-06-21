@@ -1,3 +1,4 @@
+<h1>Available Cohorts</h1>
 <ul>
 <% @cohorts.each do |cohort| %>
   <li><%= link_to "Class of #{cohort.graduation_year}", cohort_path(cohort) %></li>
