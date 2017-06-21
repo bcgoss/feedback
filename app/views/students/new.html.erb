@@ -1,9 +1,2 @@
 <h3>Add Student</h3>
-<%= form_for @student do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %><br>
-  <%= f.label :phone_number %>
-  <%= f.text_field :phone_number %>
-  <%= f.collection_select :cohort_id, Cohort.all, :id, :graduation_year %>
-  <%= f.submit %>
-<% end %>
+<%= render partial: 'form', locals:  { student: @student } %>
