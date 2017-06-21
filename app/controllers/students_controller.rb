@@ -13,11 +13,12 @@ class StudentsController < ApplicationController
   end
 
   def create
-byebug
     @student = Student.new(student_params)
     if @student.save
-      render :show
+      flash[:success] = "#{@student.name} added"
+      redirect_to cohort_path @student.cohort
     else
+      flash[:error] = @student.errors.full_messages.join('. ')
       render :new
     end
   end
@@ -29,8 +30,10 @@ byebug
   def update
     @student = Student.find(params[:id])
     if @student.update_attributes(student_params)
+      flash[:success] = @student.name + ' updated' 
       render :show
     else
+      flash[:error] = @student.errors.full_messages.join('. ')
       render :edit
     end
   end
@@ -38,6 +41,6 @@ byebug
   private
 
   def student_params
-    params.require(:student).permit(:name, :phone_number)
+    params.require(:student).permit(:name, :phone_number, :cohort_id)
   end
 end
