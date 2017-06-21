@@ -1,3 +1,6 @@
 <h3><%= @student.name %></h3>
-<ul><li><%= @student.display_number %></li></ul>
+<ul>
+  <li><%= link_to "Class of #{@student.cohort.graduation_year}", cohort_path(@student.cohort) %></li>
+  <li><%= @student.display_number %></li>
+</ul>
 <%= link_to 'Edit', edit_student_path(@student.id) %>
