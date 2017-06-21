@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+c2017 = Cohort.create(graduation_year: '2017')
+c2017.students.create(name: 'Bryan Goss', phone_number: '2234567890')
