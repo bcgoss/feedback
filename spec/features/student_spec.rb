@@ -16,8 +16,9 @@ RSpec.describe Student do
   end
 
   it 'lists all students' do
-    create :student, name: 'Student 1' 
-    create :student, name: 'Student 2'
+    cohort = create :cohort
+    create :student, name: 'Student 1', phone_number: '5555555551', cohort: cohort
+    create :student, name: 'Student 2', phone_number: '5555555552', cohort: cohort
 
     visit students_path
 
