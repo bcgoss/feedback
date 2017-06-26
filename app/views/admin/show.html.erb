@@ -3,11 +3,11 @@
 <% if @user.unverified? %>
   <%= link_to('Approve', admin_user_approvals_path(@user), method: :post) %>
 <% else %>
-  <%= link_to('Revoke', admin_user_approvals_path(@user), method: :delete) %>
+  <%= link_to('Revoke', admin_user_approval_path(@user), method: :delete) %>
 <% end %>
 <% if @user.admin? %>
-  <%= link_to 'Revoke Aministrator', admin_user_administrator_path(@user), method: :delete %>
+  <%= link_to 'Revoke Administrator', admin_user_administrator_path(@user), method: :delete %>
 <% else %>
-  <%= link_to 'Make Administrator', admin_user_administrator_path(@user), method: :post %>
+  <%= link_to 'Make Administrator', admin_user_administrator_index_path(@user), method: :post %>
 <% end %>
 

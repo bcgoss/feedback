@@ -43,6 +43,7 @@ group :development, :test do
   gem 'capybara'
   gem 'vcr'
   gem 'faraday'
+  gem 'launchy'
 end
 
 group :development do
