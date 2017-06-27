@@ -4,4 +4,11 @@ Rails.application.routes.draw do
   root to: 'home#index'
   resources :cohorts
   resources :students
+
+  namespace :admin do
+    resources :users do
+      resources :approvals, only: [:create, :destroy]
+      resources :administrator, only: [:create, :destroy]
+    end
+  end
 end
