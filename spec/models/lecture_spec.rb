@@ -12,10 +12,18 @@ RSpec.describe Lecture, type: :model do
   end
 
   it 'formats start time' do
+    subject = create :lecture, start_at: "2017-07-05 16:00:00"
 
+    expected = "July 5, 2017 at 4:00pm"
+
+    expect(subject.start_time).to eq expected
   end
 
   it 'formats end time' do
+    subject = create :lecture, start_at: "2017-07-05 16:00:00", duration: 90
 
+    expected = "July 5, 2017 at 5:30pm"
+
+    expect(subject.end_time).to eq expected
   end
 end
