@@ -27,4 +27,21 @@ RSpec.describe Lecture do
     expect(page).to have_content("July 5, 2017 at 4:00pm")
     expect(page).to have_content("July 12, 2017 at 4:00pm")
   end
+
+  it 'creates new lectures for a cohort' do
+    cohort = create :cohort
+    instructor = create :user
+
+    visit cohort_path cohort
+
+    click_on "Schedule a lecture"
+
+    fill_in 'Title', with: 'Foo'
+    fill_in 'lecture[start_at]', with: '7/12/2017'
+    fill_in 'Duration', with: '90'
+    click_button 'Create Lecture'
+
+    expect(page).to have_content 'Foo'
+    expect(page
+  end
 end
