@@ -1,6 +1,5 @@
-class AdminController < ActionController::Base
+class Admin::AdminController < ActionController::Base
   before_action :authenticate_admin!
-
 
   private
 
