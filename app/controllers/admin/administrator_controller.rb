@@ -1,4 +1,4 @@
-class Admin::AdministratorController < AdminController
+class Admin::AdministratorController < Admin::AdminController
   def create
     @user = User.find(params[:user_id])
     @user.admin!

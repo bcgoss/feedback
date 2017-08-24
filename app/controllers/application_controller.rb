@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
   private
 
   def authorize_user!
-    !(current_user.unverified?)
+    current_user && !(current_user.unverified?)
   end
 end
