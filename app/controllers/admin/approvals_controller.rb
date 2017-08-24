@@ -1,4 +1,4 @@
-class Admin::ApprovalsController < AdminController
+class Admin::ApprovalsController < Admin::AdminController
   def create
     @user = User.find(params[:user_id])
     @user.approved!

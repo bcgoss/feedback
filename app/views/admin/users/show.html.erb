@@ -1,5 +1,5 @@
 <h1>User Page</h1>
-<%= render partial: 'admin/shared/user', locals: {user: @user} %>
+<%= render partial: 'admin/users/shared/user', locals: {user: @user} %>
 <% if @user.unverified? %>
   <%= link_to('Approve', admin_user_approvals_path(@user), method: :post) %>
 <% else %>
