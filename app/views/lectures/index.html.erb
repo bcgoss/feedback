@@ -1,6 +1,6 @@
 <h1>Lectures for <%= @cohort %></h1>
 <ul>
   <% @lectures.each do |lecture| %>
-    <li><%= link_to lecture.start_time, cohort_lecture_path(@cohort, lecture) %></li>
+    <li><%= link_to "#{lecture.title}: #{lecture.start_time}", cohort_lecture_path(@cohort, lecture) %></li>
   <% end %>
 </ul>
